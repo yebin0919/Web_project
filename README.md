@@ -24,7 +24,7 @@
 
 - (option) 여러 명의 관리자 계정을 만들 수 있다.
 
-####2. 공모전 정보 등록/관리
+#### 2. 공모전 정보 등록/관리
 
 - 기본정보: 이름, 주최사, 분야, 응시대상, 접수기간, 공모요강, 담당자, 연락처
 
@@ -46,7 +46,7 @@ s://github.com/cheeaun/mooeditable/wiki/Javascript-WYSIWYG-editors)
 
 - (option) 공모전 정보 승인 프로세스 추가: 등록된 정보는 관리자의 승인 이후에 공개된다.
 
-####3. 공모전 조회
+#### 3. 공모전 조회
 
 - 공모전의 목록을 조회할 수 있다.
 
@@ -66,7 +66,7 @@ s://github.com/cheeaun/mooeditable/wiki/Javascript-WYSIWYG-editors)
 
 - (option) 공유기능: 공모전 정보를 페이스북, 트위터 등으로 공유할 수 있다.
 
-####4. 기타
+#### 4. 기타
 
 - 반드시 nodejs, expressjs, mongodb를 사용해야 한다.
 - 모든 최신 브라우져(Safari, Chrome, Firefox 등)에서 무리 없이 사용할 수 있어야 한다.
