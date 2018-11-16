@@ -36,8 +36,9 @@ a:hover {
   border-bottom: 1px solid #eee;
   color: #011a72; }
 
-.header > .navbar {
-  background-color: #011a72 !important; }
+.header nav a {
+  color: white;
+}
 
 .search-input-group {
   margin: 1em 0;
@@ -133,4 +134,7 @@ a:hover {
     margin-bottom: 0.5em;
     color: #bbb; }
 
+.sectionbar {
+  margin-top: 1.5em;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,25 +1,23 @@
 .header.clearfix
-  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-    .container
-      a.navbar-brand(href="/") MJ Overflow
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
-        span.navbar-toggler-icon
-
+  .container
+    a.navbar-brand(href="/") 
+      img(src="https://www.wevity.com/images/logo_wevity.png" alt="공모전 대외활동 사이트 - 위비티")
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       #navbarsExampleDefault.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto
+        ul.nav.justify-content-center
           li.nav-item
-            a.nav-link(href="/questions") Questions
+            a.nav-link(href="/questions") 공모전
           li.nav-item
-            a.nav-link(href="/users") Users
+            a.nav-link(href="/users") 회원관리
           if (!currentUser) 
             li.nav-item
-              a.nav-link(href='/signin') Signin
+              a.nav-link(href='/signin') 로그인
             li.nav-item
-              a.nav-link(href='/users/new') Signup
+              a.nav-link(href='/users/new') 회원가입
           else
             li.nav-item
-              a.nav-link(href=`/users/${currentUser._id}`) My Profile
+              a.nav-link(href=`/users/${currentUser._id}`) 마이페이지
             li.nav-item
-              a.nav-link(href='/signout') Signout
+              a.nav-link(href='/signout') 로그아웃
         
           

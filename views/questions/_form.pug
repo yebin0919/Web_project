@@ -1,9 +1,30 @@
 .form-group
-  label(for="title") Title
-  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
+  label(for="title") 공모전명
+  input.form-control(type="text", name="title", value=question.title)
 .form-group
-  label(for="question") Question
-  textarea.form-control(name="content", rows="5")= question.content
+  label(for="content") 공모전 내용
+  textarea.form-control(type="text", name="content")= question.content
+.form-group
+  label(for="section") 공모분야
+  
+  .sectionbar * 분야별
+  label(for="section1") 기획/아이디어
+  input(type="checkbox", name="section1") 
+  label(for="section2") 광고/마케팅
+  input(type="checkbox", name="section2")
+
+  .sectionbar * 응시대상자
+  label(for="section?") 기획/아이디어
+  input(type="checkbox", name="section?") 
+  label(for="section?") 광고/마케팅
+  input(type="checkbox", name="section?")  
+
+  .sectionbar 주최사
+  label(for="section?") 기획/아이디어
+  input(type="checkbox", name="section?") 
+  label(for="section?") 광고/마케팅
+  input(type="checkbox", name="section?") 
+
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
