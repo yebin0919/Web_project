@@ -2,29 +2,110 @@
   label(for="title") 공모전명
   input.form-control(type="text", name="title", value=question.title)
 .form-group
-  label(for="content") 공모전 내용
-  textarea.form-control(type="text", name="content")= question.content
-.form-group
   label(for="section") 공모분야
-  
-  .sectionbar * 분야별
-  label(for="section1") 기획/아이디어
-  input(type="checkbox", name="section1") 
-  label(for="section2") 광고/마케팅
-  input(type="checkbox", name="section2")
+  .sectionbar 분야별
+  label(for="sec") 기획/아이디어
+  input(type="checkbox", name="sec1", id="sec", value="1", data="기획/아이디어") 
+  label(for="sec") 광고/마케팅
+  input(type="checkbox", name="sec1", id="sec", value="2", data=)
+  label(for="section") 논문/리포트
+  input(type="checkbox", name="chk3")
+  label(for="section") 영상/UCC/사진
+  input(type="checkbox", name="chk4")
+  label(for="section") 디자인/캐릭터/웹툰
+  input(type="checkbox", name="chk5")
+  label(for="section") 웹/모바일/플래시
+  input(type="checkbox", name="chk6")
+  label(for="section") 게임/소프트웨어
+  input(type="checkbox", name="chk7")
+  label(for="section") 과학/공학
+  input(type="checkbox", name="chk8")
+  label(for="section") 문학/글/시나리오
+  input(type="checkbox", name="chk9")
+  label(for="section") 건축/건설/인테리어
+  input(type="checkbox", name="chk10")
+  label(for="section") 네이밍/슬로건
+  input(type="checkbox", name="chk11")
+  label(for="section") 예체능/미술/음악
+  input(type="checkbox", name="chk12")
+  label(for="section") 대외활동/서포터즈
+  input(type="checkbox", name="chk13")
+  label(for="section") 봉사활동
+  input(type="checkbox", name="chk14")
+  label(for="section") 취업/창업
+  input(type="checkbox", name="chk15")
+  label(for="section") 해외
+  input(type="checkbox", name="chk16")
+  label(for="section") 기타
+  input(type="checkbox", name="chk17")
 
-  .sectionbar * 응시대상자
-  label(for="section?") 기획/아이디어
-  input(type="checkbox", name="section?") 
-  label(for="section?") 광고/마케팅
-  input(type="checkbox", name="section?")  
+  .sectionbar 응시대상자
+  label(for="section") 제한없음
+  input(type="checkbox", name="chk18") 
+  label(for="section") 일반인
+  input(type="checkbox", name="chk19")
+  label(for="section") 대학생/대학원생
+  input(type="checkbox", name="chk20")  
+  label(for="section") 청소년
+  input(type="checkbox", name="chk21")
+  label(for="section") 어린이
+  input(type="checkbox", name="chk22")
+  label(for="section") 기타
+  input(type="checkbox", name="chk23")
 
   .sectionbar 주최사
-  label(for="section?") 기획/아이디어
-  input(type="checkbox", name="section?") 
-  label(for="section?") 광고/마케팅
-  input(type="checkbox", name="section?") 
+  label(for="section") 정부/공공기관
+  input(type="checkbox", name="chk24") 
+  label(for="section") 공기업
+  input(type="checkbox", name="chk25") 
+  label(for="section") 대기업
+  input(type="checkbox", name="chk26")
+  label(for="section") 신문/방송/언론
+  input(type="checkbox", name="chk27")
+  label(for="section") 외국계기업
+  input(type="checkbox", name="chk28")
+  label(for="section") 중견/중소/벤처기업
+  input(type="checkbox", name="chk29")
+  label(for="section") 비영리/협회/재단
+  input(type="checkbox", name="chk30")
+  label(for="section") 해외
+  input(type="checkbox", name="chk31")
+  label(for="section") 기타
+  input(type="checkbox", name="chk32")
+
+  .sectionbar 시상내역
+  label(for="section") 5천만원이상
+  input(type="checkbox", name="chk33") 
+  label(for="section") 5천만원미만~3천만원이상
+  input(type="checkbox", name="chk34")
+  label(for="section") 3천만원미만~1천만원이상
+  input(type="checkbox", name="chk35")
+  label(for="section") 1천만원미만
+  input(type="checkbox", name="chk36")   
+  label(for="section") 취업특전
+  input(type="checkbox", name="chk37") 
+  label(for="section") 입사시가산점
+  input(type="checkbox", name="chk38") 
+  label(for="section") 인턴채용
+  input(type="checkbox", name="chk39")   
+  label(for="section") 정직원채용
+  input(type="checkbox", name="chk40")   
+  label(for="section") 기타
+  input(type="checkbox", name="chk41")  
 
 .form-group
-  label(for="tags") Tags
-  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+  label(for="term") 접수기간
+  input.form-control(type="date", name="term-start", value=question.term)
+  input.form-control(type="date", name="term-end", value=question.term)
+
+.form-group
+  label(for="content") 공모요강
+  textarea.form-control(type="text", name="content")= question.content
+
+.form-group
+  label(for="contact") 담당자
+  input.form-control(type="text", name="contact", placeholder="담당자 이름")
+
+.form-group
+  label(for="contact") 연락처
+  input.form-control(type="text", name="contact", placeholder="담당자 메일/연락처")

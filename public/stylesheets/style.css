@@ -36,9 +36,8 @@ a:hover {
   border-bottom: 1px solid #eee;
   color: #011a72; }
 
-.header nav a {
-  color: white;
-}
+.header > .navbar {
+  background-image: url(https://www.wevity.com/images/bg_header.gif); }
 
 .search-input-group {
   margin: 1em 0;
@@ -134,7 +133,15 @@ a:hover {
     margin-bottom: 0.5em;
     color: #bbb; }
 
-.sectionbar {
-  margin-top: 1.5em;
+.header .container ul li a {
+  color: white;
 }
+
+.sectionbar {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: rgba(211, 211, 211, 0.66);
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,14 +1,15 @@
 var express = require('express'),
     User = require('../models/user');
 var router = express.Router();
+const catchErrors = require('../lib/async-error');
 
 function needAuth(req, res, next) {
-    if (req.session.user) {
-      next();
-    } else {
-      req.flash('danger', 'Please signin first.');
-      res.redirect('/signin');
-    }
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    req.flash('danger', 'Please signin first.');
+    res.redirect('/signin');
+  }
 }
 
 function validateForm(form, options) {
@@ -36,7 +37,7 @@ function validateForm(form, options) {
   if (form.password.length < 6) {
     return 'Password must be at least 6 characters.';
   }
-
+  
   return null;
 }
 
@@ -119,35 +120,26 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', catchErrors(async (req, res, next) => {
   var err = validateForm(req.body, {needPassword: true});
   if (err) {
     req.flash('danger', err);
     return res.redirect('back');
   }
-  User.findOne({email: req.body.email}, function(err, user) {
-    if (err) {
-      return next(err);
-    }
-    if (user) {
-      req.flash('danger', 'Email address already exists.');
-      return res.redirect('back');
-    }
-    var newUser = new User({
-      name: req.body.name,
-      email: req.body.email,
-    });
-    newUser.password = req.body.password;
-
-    newUser.save(function(err) {
-      if (err) {
-        return next(err);
-      } else {
-        req.flash('success', 'Registered successfully. Please sign in.');
-        res.redirect('/');
-      }
-    });
+  var user = await User.findOne({email: req.body.email});
+  console.log('USER??', user);
+  if (user) {
+    req.flash('danger', 'Email address already exists.');
+    return res.redirect('back');
+  }
+  user = new User({
+    name: req.body.name,
+    email: req.body.email,
   });
-});
+  user.password = await user.generateHash(req.body.password);
+  await user.save();
+  req.flash('success', 'Registered successfully. Please sign in.');
+  res.redirect('/');
+}));
 
 module.exports = router;
